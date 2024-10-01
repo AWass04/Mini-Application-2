@@ -1,0 +1,3 @@
+﻿  MiniApps.cpp
+C:\Users\Aaron Wass\Documents\Uni\Yr 2 - Semester 1\Advanced Programming\MiniApps\MiniApps\MiniApps.cpp(22,14): warning C4244: 'argument': conversion from 'time_t' to 'unsigned int', possible loss of data
+  MiniApps.vcxproj -> C:\Users\Aaron Wass\Documents\Uni\Yr 2 - Semester 1\Advanced Programming\MiniApps\x64\Debug\MiniApps.exe
