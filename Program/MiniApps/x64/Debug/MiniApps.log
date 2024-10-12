@@ -1,6 +1,4 @@
 ﻿  MiniApps.cpp
-C:\Users\Aaron Wass\Documents\Uni\Yr 2 - Semester 1\Advanced Programming\MiniApps\MiniApps\MiniApps.cpp(28,14): warning C4244: 'argument': conversion from 'time_t' to 'unsigned int', possible loss of data
-C:\Users\Aaron Wass\Documents\Uni\Yr 2 - Semester 1\Advanced Programming\MiniApps\MiniApps\MiniApps.cpp(109,38): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
-C:\Users\Aaron Wass\Documents\Uni\Yr 2 - Semester 1\Advanced Programming\MiniApps\MiniApps\MiniApps.cpp(112,34): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
-C:\Users\Aaron Wass\Documents\Uni\Yr 2 - Semester 1\Advanced Programming\MiniApps\MiniApps\MiniApps.cpp(116,34): warning C4244: 'argument': conversion from 'double' to 'std::streamsize', possible loss of data
-  MiniApps.vcxproj -> C:\Users\Aaron Wass\Documents\Uni\Yr 2 - Semester 1\Advanced Programming\MiniApps\x64\Debug\MiniApps.exe
+C:\Users\Aaron Wass\Documents\Uni\Yr 2 - Semester 1\Advanced Programming\Mini Apps\MiniApps\MiniApps.cpp(40,14): warning C4244: 'argument': conversion from 'time_t' to 'unsigned int', possible loss of data
+C:\Users\Aaron Wass\Documents\Uni\Yr 2 - Semester 1\Advanced Programming\Mini Apps\MiniApps\MiniApps.cpp(314,13): warning C4267: 'initializing': conversion from 'size_t' to 'int', possible loss of data
+  MiniApps.vcxproj -> C:\Users\Aaron Wass\Documents\Uni\Yr 2 - Semester 1\Advanced Programming\Mini Apps\x64\Debug\MiniApps.exe
