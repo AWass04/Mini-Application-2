@@ -16,13 +16,13 @@ void EncryptDecrypt(bool ecnrypt);
 bool CheckInput(string input);
 string CaeserCipher(int shiftAmount, string input, bool encrpyt);
 
-int main() 
-{
+int main() {
+
 	string input;
 	int userChoice = 5;
 
-	do
-	{
+	do {
+		
 		cout << "\nWhat application would you like to run?\n";
 		cout << "-----------------------------------------\n\n";
 		cout << "1) Keep Counting \n2) Square Root Calculator \n3) Encrypt Text \n4) Decrpyt Text \n0) Quit \n"; // Give menu options 
@@ -161,13 +161,9 @@ int main()
 		default:
 
 			// Error handelling - If user inputs anything other than 0 - 4, display error
-			if (userChoice > 4)
-			{
-				cout << "Please only enter the values '1', '2','3', '4' or '0'\n";
-			}
-			else {
-				cout << "Enter a single character\n";
-			}
+			if (userChoice > 4) cout << "Please only enter the values '1', '2','3', '4' or '0'\n";
+			else  cout << "Enter a single character\n";
+			
 			break;
 		}
 	} 
