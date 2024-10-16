@@ -9,17 +9,16 @@
 
 using namespace std;
 
-int CheckStringIsNum(string input);
 int GetLowerBound(int input);
 double GetSquareRoot(int input, double upperBound, double lowerBound, double decimalPlaces);
 void EncryptDecrypt(bool ecnrypt);
 bool CheckInput(string input);
 string CaeserCipher(int shiftAmount, string input, bool encrpyt);
+int GetInt();
 
 int main() {
 
-	string input;
-	int userChoice = 5;
+	int userChoice;
 
 	do {
 		
@@ -28,10 +27,10 @@ int main() {
 		cout << "1) Keep Counting \n2) Square Root Calculator \n3) Encrypt Text \n4) Decrpyt Text \n0) Quit \n"; // Give menu options 
 		cout << "\nPlease enter option:\n";
 
-		cin >> input;
+		userChoice = GetInt();
 		cout << "\n";
 
-		userChoice = CheckStringIsNum(input);
+		//userChoice = CheckStringIsNum(input);
 
 		switch (userChoice) {
 		case 1: // Counting 
@@ -69,9 +68,8 @@ int main() {
 					cout << "\nQuestion " << i + 1 << ": " << num1 << " + " << num2 << " = "; 
 				}
 				
-				cin >> input;
-
-				userAnswer = CheckStringIsNum(input);
+				userAnswer = GetInt();
+				cout << "\n";
 
 				if (userAnswer == result) {
 
@@ -95,7 +93,6 @@ int main() {
 		case 2: // Square root calculator
 		{
 			bool isValidNum = false;
-			string input;
 			int radicand;
 			int decimalPlaces = 1;
 
@@ -103,33 +100,27 @@ int main() {
 			cout << "----------------------------------\n\n";
 
 			cout << "What number would you like to find the square root of?\n";
-			cin >> input;
+			radicand = GetInt();
 			cout << "\n";
 			
-			radicand = CheckStringIsNum(input); 
-
 			// Error Handling - Produce error message if its not a whole number or a number less than 0
-			while (radicand == 999999999 || radicand < 1) {
+			while (radicand < 1) {
 
 				cout << "Please enter a whole number thats above 0.\n"; 
-				cin >> input;
-
-				radicand = CheckStringIsNum(input);
+				radicand = GetInt();
+				cout << "\n";
 			} 
 
 			cout <<"\nHow many decimal places would you like that too? Please choose a whole number between 1 - 6.\n";
-			cin >> input;
+			decimalPlaces = GetInt();
 			cout << "\n";
-
-			decimalPlaces = CheckStringIsNum(input); 
 
 			// Error handling - Produce an error if its not a number between 1 - 6
 			while (decimalPlaces < 1 || decimalPlaces > 6) {
 				
 				cout << "Please only enter a whole number between 1 - 6. How many decimal places would you like it to be accurate to? \n";
-				cin >> input;
-
-				decimalPlaces = CheckStringIsNum(input); // Check user input is a number
+				decimalPlaces = GetInt();
+				cout << "\n";
 			}
 
 			double lowerBound = GetLowerBound(radicand); // Lower bound is the last known value that the true square root must be above
@@ -172,33 +163,30 @@ int main() {
 	return 0;
 }
 
-int CheckStringIsNum(string input) {
+int GetInt() {
 
-	int minusCount = 0;
+	double input;
+	bool validInput = true;
 
-	for (char x : input) { 
+	do {
+		cin >> input;
+		
+		// Error handeling - If input isnt a whole number make user reenter entry
+		if (cin.fail() || floor(input) != input) {
 
-		switch (x) {
+			validInput = false;
 
-			case '1': case '2': case '3': case '4': case '5': case '6': case '7': case '8': case '9': case '0':
-				// Ignore if valid input
-			break;
-			case '-':
-				minusCount++;
-			break;
-
-			default: 
-				return 999999999; // Return result that will produce error
+			cout << "\nPlease enter a whole number: ";
+			cin.clear();
+			cin.ignore();
 		}
-	}
+		else {
+			
+			int number = input; // Convert double to int
+			return number;
+		}
 
-	// Error handeling - if the input isnt a negative number but simply a '-' return result that will produce error
-	if (input == "-" || minusCount > 1) return 999999999; 
-
-	input = input.substr(0, 10); // Make sure its not too big of a number
-	int number = stoi(input); // Convert string to int
-
-	return number;
+	} while (!validInput);
 }
 
 int GetLowerBound(int input) {
@@ -261,17 +249,17 @@ void EncryptDecrypt(bool encrypt) {
 	} while (!validInput);
 
 	cout << "Enter shift amount (1 - 36)\n";
-	cin >> input;
 
-	shiftAmount = CheckStringIsNum(input);
+	shiftAmount = GetInt();
+	cout << "\n";
 
 	// Error handling - Produce error if input is not between 1 - 16. Repeat until it is. 
 	while (shiftAmount < 1 || shiftAmount > 36) {
 
 		cout << "Please enter a whole number between 1 - 36\n";
-		cin >> input;
-
-		shiftAmount = CheckStringIsNum(input); // Check input is number
+		
+		shiftAmount = GetInt();
+		cout << "\n";
 	}
 
 	resultText = CaeserCipher(encrypt ? shiftAmount : -shiftAmount, text, encrypt);

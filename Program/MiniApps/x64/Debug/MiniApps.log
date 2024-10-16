@@ -1,4 +1,6 @@
 ﻿  MiniApps.cpp
-C:\Users\Aaron Wass\Documents\Uni\Yr 2 - Semester 1\Advanced Programming\Mini Apps\MiniApps\MiniApps.cpp(40,14): warning C4244: 'argument': conversion from 'time_t' to 'unsigned int', possible loss of data
-C:\Users\Aaron Wass\Documents\Uni\Yr 2 - Semester 1\Advanced Programming\Mini Apps\MiniApps\MiniApps.cpp(304,13): warning C4267: 'initializing': conversion from 'size_t' to 'int', possible loss of data
+C:\Users\Aaron Wass\Documents\Uni\Yr 2 - Semester 1\Advanced Programming\Mini Apps\MiniApps\MiniApps.cpp(39,14): warning C4244: 'argument': conversion from 'time_t' to 'unsigned int', possible loss of data
+C:\Users\Aaron Wass\Documents\Uni\Yr 2 - Semester 1\Advanced Programming\Mini Apps\MiniApps\MiniApps.cpp(185,15): warning C4244: 'initializing': conversion from 'double' to 'int', possible loss of data
+C:\Users\Aaron Wass\Documents\Uni\Yr 2 - Semester 1\Advanced Programming\Mini Apps\MiniApps\MiniApps.cpp(292,13): warning C4267: 'initializing': conversion from 'size_t' to 'int', possible loss of data
+C:\Users\Aaron Wass\Documents\Uni\Yr 2 - Semester 1\Advanced Programming\Mini Apps\MiniApps\MiniApps.cpp(190,1): warning C4715: 'GetInt': not all control paths return a value
   MiniApps.vcxproj -> C:\Users\Aaron Wass\Documents\Uni\Yr 2 - Semester 1\Advanced Programming\Mini Apps\x64\Debug\MiniApps.exe
