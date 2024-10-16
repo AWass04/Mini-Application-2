@@ -174,12 +174,17 @@ int main() {
 
 int CheckStringIsNum(string input) {
 
+	int minusCount = 0;
+
 	for (char x : input) { 
 
 		switch (x) {
 
-			case '1': case '2': case '3': case '4': case '5': case '6': case '7': case '8': case '9': case '0': case '-':
+			case '1': case '2': case '3': case '4': case '5': case '6': case '7': case '8': case '9': case '0':
 				// Ignore if valid input
+			break;
+			case '-':
+				minusCount++;
 			break;
 
 			default: 
@@ -188,7 +193,7 @@ int CheckStringIsNum(string input) {
 	}
 
 	// Error handeling - if the input isnt a negative number but simply a '-' return result that will produce error
-	if (input == "-") return 999999999; 
+	if (input == "-" || minusCount > 1) return 999999999; 
 
 	input = input.substr(0, 10); // Make sure its not too big of a number
 	int number = stoi(input); // Convert string to int
@@ -278,19 +283,8 @@ bool CheckInput(string input) {
 
 	for (char x : input) {
 
-		switch (x) {
-		case 'A': case 'B': case 'C': case 'D': case 'E':
-		case 'F': case 'G': case 'H': case 'I': case 'J':
-		case 'K': case 'L': case 'M': case 'N': case 'O':
-		case 'P': case 'Q': case 'R': case 'S': case 'T':
-		case 'U': case 'V': case 'W': case 'X': case 'Y':
-		case 'Z': case '1': case '2': case '3': case '4':
-		case '5': case '6': case '7': case '8': case '9':
-		case '0': case ' ':
-			// Ignore if valid
-			break;
+		if (!isdigit(x) && !isalpha(x) && !isspace(x)) {
 
-		default: // If special characters are entered produce error
 			cout << "Do not include special characters.\n\n";
 
 			return false;
